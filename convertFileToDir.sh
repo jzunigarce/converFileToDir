@@ -24,12 +24,10 @@ OIFS="$IFS"
 IFS=$'\n'
 for file in `find $directory -type f -name "*.$ext"`  
 do
-	#dirname=$(echo "$file" | rev | cut -d"/" -f1 | rev | cut -d"." -f1)
-	#dirname=$(echo "$file" | rev | cut -d"/" -f1 | rev)	
-	#mkdir -p "$directory"/"$dirname"
 	filename="$(basename "$file" | sed 's/\(.*\)\..*/\1/')"
-	echo "$filename"
 	mkdir -p "$directory"/"$filename"
-	cp $file "$directory"/"$filename" 
+	echo "=============== ✔️  Created directory $filename ==============="
+	cp $file "$directory"/"$filename"
+	echo "📋 Copy $file to $filename directory"
 done
 IFS="$OIFS"
