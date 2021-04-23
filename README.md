@@ -1,4 +1,4 @@
-# conver Files to directory and copy the file to it
+# Convert Files to directory and copy the file to it
 
 Converts all files belonging to a directory into directories
 
